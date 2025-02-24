@@ -73,14 +73,14 @@ function App() {
       {/* Header */}
       <header className='bg-white shadow-sm'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
-          <div className='flex items-center justify-between'>
-            <div className='flex items-center space-x-2'>
+          <div className='flex items-center justify-between flex-wrap'>
+            <div className='flex items-center mx-auto space-x-2'>
               <img src='/logo.svg' alt='' className='w-14' />
-              <span className='text-4xl font-semibold text-bakery-900'>
+              <span className='text-4xl  font-semibold text-bakery-900'>
                 Ofenfrisch
               </span>
             </div>
-            <div className='flex items-center space-x-4 text-bakery-700'>
+            <div className='flex items-center  mx-auto space-x-4 text-bakery-700'>
               <Leaf className='h-5 w-5' />
               <span className='text-2xl'>Bio & Regional</span>
             </div>
@@ -108,36 +108,26 @@ function App() {
       </div>
 
       {/* Subscription Selection */}
-      <div className='max-w-4xl mx-auto px-4 py-12'>
-        <div className='bg-white rounded-lg shadow-lg p-6 md:p-8'>
+      <div className='mx-auto px-4 py-12'>
+        <div className='bg-white max-w-[90vw] w-[800px] rounded-lg shadow-lg p-6 md:p-8'>
           {/* Progress Steps */}
-          <div className='flex justify-between gap-2 mb-8'>
-            {[1, 2, 3, 4, 5].map((number) => (
+          
               <div
-                key={number}
-                className={`flex items-center ${
-                  step >= number ? 'text-bakery-700' : 'text-gray-400'
-                }`}
+                className="flex items-center w-40 text-bakery-700"
               >
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                    step >= number
-                      ? 'border-bakery-700 bg-bakery-700 text-white'
-                      : 'border-gray-300'
-                  }`}
+                  className="w-8 h-8 rounded-full flex items-center justify-center border-2 border-bakery-700 bg-bakery-700 text-white"
                 >
-                  {number}
+                  {step}
                 </div>
                 <div className='ml-2'>
-                  {number === 1 && 'Abo wählen'}
-                  {number === 2 && 'Paket wählen'}
-                  {number === 3 && 'Liefertermine'}
-                  {number === 4 && 'Bestätigung'}
-                  {number === 5 && 'Bezahlung'}
+                  {step === 1 && 'Abo wählen'}
+                  {step === 2 && 'Paket wählen'}
+                  {step === 3 && 'Liefertermine'}
+                  {step === 4 && 'Bestätigung'}
+                  {step === 5 && 'Bezahlung'}
                 </div>
               </div>
-            ))}
-          </div>
 
           {step === 1 && (
             <div className='space-y-6'>
